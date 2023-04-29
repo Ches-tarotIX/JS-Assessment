@@ -1,0 +1,56 @@
+/*
+Assessment Requirements
+1. Create a variable that can hold a number of NFT's. What type of variable might this be?
+2. Create an object inside your mintNFT function that will hold the metadata for your NFTs. 
+   The metadata values will be passed to the function as parameters. When the NFT is ready, 
+   you will store it in the variable you created in step 1
+3. Your listNFTs() function will print all of your NFTs metadata to the console (i.e. console.log("Name: " + someNFT.name))
+4. For good measure, getTotalSupply() should return the number of NFT's you have created
+*/
+
+// create a variable to hold your NFT's
+const godHopeThisWorks = []
+
+// this function will take in some values as parameters, create an
+// NFT object using the parameters passed to it for its metadata, 
+// and store it in the variable above.
+function mintNFT (_name, _animalType, _eyeColor, _shirtType, _shirtColor, _accessory) {
+    const NFT = {
+        "name": _name,
+        "animalType": _animalType,
+        "eyeColor": _eyeColor,
+        "shirtType": _shirtType, 
+        "shirtColor": _shirtColor,
+        "accessory": _accessory
+    }
+    godHopeThisWorks.push(NFT);
+    console.log("Minted:" + _name);
+}
+
+// create a "loop" that will go through an "array" of NFT's
+// and print their metadata with console.log()
+function listNFTs () {
+for (let i = 0; i < godHopeThisWorks.length; i++) {
+    console.log("\nID: \t\t\t" + (i + 1));
+    console.log("Name: \t\t\t" + godHopeThisWorks[i].name);
+    console.log("Animal Type: \t" + godHopeThisWorks[i].animalType);
+    console.log("Eye Color: \t\t" + godHopeThisWorks[i].eyeColor);
+    console.log("Shirt Type: \t" + godHopeThisWorks[i].shirtType);
+    console.log("Shirt Color: \t" + godHopeThisWorks[i].shirtColor);
+    console.log("Accessory: \t\t" + godHopeThisWorks[i].accessory);
+ }
+}
+
+// print the total number of NFTs we have minted to the console
+function getTotalSupply() {
+ console.log("\n" + godHopeThisWorks.length);
+}
+
+// call your functions below this line
+mintNFT("Vincent", "Highland Cow", "Brown", "Button Up", "Green", "Inverted Cross Necklace")
+mintNFT("Ora", "Sea Otter", "Green", "Polo Shirt", "Pink", "Crown Jewel")
+mintNFT("Finny", "Raccoon", "Blue", "Tank Top", "Black & White", "Gradient Sunglasses")
+mintNFT("Leo", "Striped Hyena", "Black", "Hoodie", "Black", "Pearl Necklace")
+mintNFT("Snark", "Shark", "Gray", "Sweater Vest", "Blue", "Black Glasses")
+listNFTs();
+getTotalSupply();
